@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:31:45 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/09 15:43:31 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/09 16:45:00 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return 1;
 	}
-	for (int i = 1; argv[i]; ++i)
+	for (int i = 1; i < argc; ++i)
 	{
 		std::string	input = argv[i];
 		std::string	uppercase_string = to_uppercase(input);
