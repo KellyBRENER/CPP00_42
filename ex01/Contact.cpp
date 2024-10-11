@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:52:08 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/11 10:57:11 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:40:32 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Contact::Contact(void) {
 	std::cout<<"Contact constructor called"<<std::endl;
 }
 
-void	Contact::new(void) {
+void	Contact::add_info(void) {
 	std::cout<<"enter the First_Name"<<std::endl;
-	std::cin>>this->First_Name;
+	std::cin>>this->Firts_Name;
 	std::cout<<"enter the Last_Name"<<std::endl;
 	std::cin>>this->Last_Name;
 	std::cout<<"enter the Nickname"<<std::endl;
@@ -29,12 +29,26 @@ void	Contact::new(void) {
 	std::cin>>this->Darkest_Secret;
 }
 
-std::string	Contact::get_info(std::string& info[5]) {
-	info[0] = this->First_Name;
-	info[1] = this->Last_Name;
-	info[2] = this->Nick_Name;
-	info[3] = this->Phone_Number;
-	info[4] = this->Darkest_Secret;
+/*4col(index|first_name|last_name|nickname)
+chaque col = 10 char, separe par |, texte aligne a droite, si texte trop long,
+le tronquer et dernier carac = .*/
+void	Contact::print_contact(int index) {
+	std::string	line_to_print;
+	char	buffer[50];
+
+	std::sprintf(buffer, "%d", index);
+	line_to_print = "|*********" + std::string(buffer) + "|" + \
+		get_format(this->Firts_Name) + "|" + get_format(this->Last_Name) +\
+		"|" + get_format(this->Nickname) + "|";
+	std::cout<<line_to_print<<std::endl;
+}
+
+void	Contact::print_info_contact(void) {
+	std::cout<<"First_Name : "<<this->Firts_Name<<std::endl;
+	std::cout<<"Last_Name : "<<this->Last_Name<<std::endl;
+	std::cout<<"Nick_Name : "<<this->Nickname<<std::endl;
+	std::cout<<"Phone_Number : "<<this->Phone_Number<<std::endl;
+	std::cout<<"Darkest_Secret : "<<this->Darkest_Secret<<std::endl;
 }
 
 Contact::~Contact(void) {

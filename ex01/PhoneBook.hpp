@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:01:59 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/11 11:21:32 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:41:56 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string>
 #include <cctype>
 #include <vector>
+#include <cstdio>
 
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
@@ -23,9 +24,8 @@ class Contact {
 		Contact(void);
 		~Contact(void);
 
-		void	new(void);
-		std::string	get_info(std::string& info);
-		void	print_contact(void);
+		void	add_info(void);
+		void	print_contact(int index);
 		void	print_info_contact(void);
 	private :
 		std::string	Firts_Name;
@@ -40,7 +40,7 @@ class PhoneBook {
 	public :
 		PhoneBook(void);
 		~PhoneBook(void);
-		void	add_contact(const Contact&	new);
+		void	add_contact(const Contact&	contact);
 		void	search(void);
 		void	show_contacts(void);
 	private :
@@ -48,6 +48,9 @@ class PhoneBook {
 		int	older_contact;
 		int	nb_contact;
 };
+
+void	print_title(void);
+std::string	get_format(std::string info);
 
 #endif
 

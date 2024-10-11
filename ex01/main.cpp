@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:30:23 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/10 16:28:19 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:53:27 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,18 @@ int	main(void) {
 	PhoneBook	repertoire;
 	std::string	command;
 	std::cout<<"enter a command (ADD, SEARCH or EXIT)"<<std::endl;
-	std::cin>>command
 	while (std::cin>>command) {
 		if (command == "ADD") {
 			Contact	Contact;
-			Contact.new();
+			Contact.add_info();
 			repertoire.add_contact(Contact);
 		}
-		else if (command == "SEARCH") {
+		else if (command == "SEARCH")
 			repertoire.search();
-		}
 		else if (command == "EXIT")
-		else {
+			return 0;
+		else
 			std::cout<<"only three command allowed : ADD, SEARCH or EXIT"<<std::endl;
-		}
+		std::cout<<"enter a command (ADD, SEARCH or EXIT)"<<std::endl;
 	}
 }
