@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:01:59 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/10 16:28:51 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/11 11:21:32 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class Contact {
 		~Contact(void);
 
 		void	new(void);
+		std::string	get_info(std::string& info);
+		void	print_contact(void);
+		void	print_info_contact(void);
 	private :
 		std::string	Firts_Name;
 		std::string	Last_Name;
@@ -39,8 +42,9 @@ class PhoneBook {
 		~PhoneBook(void);
 		void	add_contact(const Contact&	new);
 		void	search(void);
+		void	show_contacts(void);
 	private :
-		std::array<Contact, 8>	contacts;
+		Contact	contacts[8];
 		int	older_contact;
 		int	nb_contact;
 };

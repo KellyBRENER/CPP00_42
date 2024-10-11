@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:46:19 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/10 16:16:24 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/11 11:17:16 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,28 @@ void	PhoneBook::add_contact(const Contact& new) {
 			else
 				this->older_contact = 0;
 		}
+}
+void	PhoneBook::show_contacts(void) {
+	print_title();
+	for (int i = 0; i < this->nb_contact; ++i)
+		print_contact(this->contacts[i]);
+}
+void	PhoneBook::search(void) {
+	show_contacts(this);
+	std::cout<<"please enter the index number of the contact you want to see"<<std::endl;
+	int	index;
+	std::cin>>index;
+	if (index < this->nb_contact)
+		print_info_contact(this->contacts[index]);
+	else {
+		std::cout<<"wrong format, please enter a number between 0 and "<<this->nb_contact<<" or anything else to quit SEARCH"<<std::endl;
+		std::cin>>index;
+		if (index < this->nb_contact)
+			print_info_contact(this->contacts[index]);
+		else
+			return;
+	}
+	return;
 }
 
 PhoneBook::~PhoneBook(void) {
