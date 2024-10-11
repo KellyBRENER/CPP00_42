@@ -6,13 +6,13 @@
 #    By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 16:51:58 by kbrener-          #+#    #+#              #
-#    Updated: 2024/10/11 15:24:52 by kbrener-         ###   ########.fr        #
+#    Updated: 2024/10/11 17:18:29 by kbrener-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 OBJ_DIR = obj/
 SRC = $(wildcard *.cpp)
 OBJS = $(SRC:%.cpp=$(OBJ_DIR)%.o)

@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:46:19 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/11 16:09:45 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/11 17:30:59 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,27 @@ void	PhoneBook::show_contacts(void) {
 	for (int i = 0; i < this->nb_contact; ++i)
 		contacts[i].print_contact(i);
 }
+
 void	PhoneBook::search(void) {
+	if (this->nb_contact == 0) {
+		std::cout<<"no contact in the phonebook"<<std::endl;
+		return;
+	}
 	show_contacts();
 	std::cout<<"please enter the index number of the contact you want to see"<<std::endl;
 	int	index = 9;
-	while (std::cin>>index) {
-		std::cout<<"wrong format, please enter a number between 0 and "\
-			<<this->nb_contact<<" or anything else to quit SEARCH"<<std::endl;
-		std::cin>>index;
-	}
-	if (index < this->nb_contact)
-			this->contacts[index].print_info_contact();
-	else
+	if (!(std::cin>>index)) {
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout<<"wrong format"<<std::endl;
+	}
+	else {
+		if (index < this->nb_contact)
+			this->contacts[index].print_info_contact();
+		else
+			std::cout<<"wrong format, the number should be between 0 and "\
+			<<this->nb_contact - 1<<std::endl;
+	}
 }
 
 PhoneBook::~PhoneBook(void) {

@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:01:59 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/11 15:41:56 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/11 17:27:12 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cctype>
 #include <vector>
 #include <cstdio>
+#include <limits>
 
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
