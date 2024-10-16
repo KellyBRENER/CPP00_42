@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:40:15 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/16 16:15:12 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/16 16:40:54 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int	Account::_totalNbWithdrawals = 0;
 
 void	Account::_displayTimestamp(void) {
 	std::time_t	now = std::time(0);
-	std::cout<<"["<<std::ctime(&now)<<"] ";
+	std::cout<<"["<<now<<"] ";
 }
 
 Account::Account(int initial_deposit) {
 	this->_accountIndex = _nbAccounts++;
 	this->_amount = initial_deposit;
-	_totalAmount =+ this->_amount;
+	_totalAmount += this->_amount;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
 	_displayTimestamp();
@@ -47,7 +47,7 @@ void	Account::displayStatus( void ) const {
 }
 
 void	Account::displayAccountsInfos( void ) {
-	_displayTimestamp;
+	_displayTimestamp();
 	std::cout<<"accounts:"<<_nbAccounts<<";total:"<<_totalAmount<<";deposits:"\
 	<<_totalNbDeposits<<";withdrawals:"<<_totalNbWithdrawals<< std::endl;
 }
@@ -56,10 +56,10 @@ void	Account::makeDeposit(int deposit) {
 	_displayTimestamp();
 	std::cout<<"index:"<<this->_accountIndex<<";p_amount:"<<this->_amount<<\
 	";deposit:"<<deposit;
-	this->_amount =+ deposit;
+	this->_amount += deposit;
 	this->_nbDeposits++;
 	_totalNbDeposits++;
-	_totalAmount =+ deposit;
+	_totalAmount += deposit;
 	std::cout<<";amount:"<<this->_amount<<";nb_deposits:"<<this->_nbDeposits\
 	<<std::endl;
 }
@@ -76,10 +76,17 @@ bool	Account::makeWithdrawal(int withdrawal) {
 		std::cout<<"refused"<<std::endl;
 		return (wd_allowed);
 	}
-	this->_amount =- withdrawal;
+	this->_amount -= withdrawal;
 	this->_nbWithdrawals++;
 	_totalNbWithdrawals++;
-	_totalAmount =- withdrawal;
+	_totalAmount -= withdrawal;
 	std::cout<<withdrawal<<";amount:"<<this->_amount<<";nb_withdrawals:"<<this->_nbWithdrawals\
 	<<std::endl;
+	return (wd_allowed);
+}
+
+Account::~Account(void) {
+	_displayTimestamp();
+	std::cout<<"index:"<<this->_accountIndex<<";amount:"<<this->_amount\
+	<<";closed"<<std::endl;
 }
