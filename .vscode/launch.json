@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/kbrener-/projets_42/CPP/module_00/git_cpp_00/ex00",
-      "program": "/home/kbrener-/projets_42/CPP/module_00/git_cpp_00/ex00/build/Debug/outDebug",
+      "cwd": "/home/kbrener-/projets_42/CPP/module_00/git_cpp_00/ex01",
+      "program": "/home/kbrener-/projets_42/CPP/module_00/git_cpp_00/ex01/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

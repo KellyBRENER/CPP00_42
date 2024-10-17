@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:40:15 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/16 16:40:54 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/17 09:56:59 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 #include <iostream>
 #include <string>
 #include <cctype>
-#include <vector>
 #include <cstdio>
-#include <limits>
 #include <ctime>
 
 int	Account::_nbAccounts = 0; // Initialisation à 0

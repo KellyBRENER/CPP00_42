@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 17:01:59 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/17 10:06:01 by kbrener-         ###   ########.fr       */
+/*   Created: 2024/10/17 09:39:09 by kbrener-          #+#    #+#             */
+/*   Updated: 2024/10/17 10:06:20 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
 #include "main.hpp"
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
+#ifndef CONTACT_H
+#define CONTACT_H
 
-//repertoire
-class PhoneBook {
+class Contact {
 	public :
-		PhoneBook(void);
-		~PhoneBook(void);
-		void	add_contact(const Contact&	contact);
-		void	search(void);
-		void	show_contacts(void);
+		Contact(void);
+		~Contact(void);
+
+		void	add_info(void);
+		void	print_contact(int index);
+		void	print_info_contact(void);
 	private :
-		Contact	contacts[8];
-		int	older_contact;
-		int	nb_contact;
+		std::string	Firts_Name;
+		std::string	Last_Name;
+		std::string	Nickname;
+		std::string	Phone_Number;
+		std::string	Darkest_Secret;
 };
 
 #endif
-

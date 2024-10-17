@@ -6,7 +6,7 @@
 /*   By: kbrener- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:46:19 by kbrener-          #+#    #+#             */
-/*   Updated: 2024/10/11 17:30:59 by kbrener-         ###   ########.fr       */
+/*   Updated: 2024/10/17 09:42:27 by kbrener-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ void	PhoneBook::search(void) {
 }
 
 PhoneBook::~PhoneBook(void) {
-	std::cout<<"destructor called"<<std::endl;
+	std::cout<<"PhoneBook destructor called"<<std::endl;
 }
